@@ -8,7 +8,7 @@ const size_t PROFUNDIDAD = 8;
 
 class Tablero
 {
-		/*TODO: Eres el programador de todo esto, decide una representación*/
+		
 	Ficha tablero[MAX][MAX];
 
 	public:
@@ -20,43 +20,43 @@ class Tablero
 		Tablero();
 		
 		/*
-		 * Comprueba si hay ganador. Si lo hay retorna el símbolo del que ha ganado.
+		 * Comprueba si hay ganador. Si lo hay retorna el sÃ­mbolo del que ha ganado.
 		 * Sino ha ganado nadie, retorna VACIO.
 		 */
 		Ficha HayGanador();
 		
 		/*
-		 * Retorna qué ficha hay en la posición indicada
+		 * Retorna quÃ© ficha hay en la posiciÃ³n indicada
 		 */
 		Ficha GetFichaPosicion(int _x, int _y);
 		
 		/*
-		 * Retorna el número de posiciones ocupadas
+		 * Retorna el nÃºmero de posiciones ocupadas
 		 */
 		int GetNumPosicionesOcupadas();
 		
 		/*
-		 * Coloca la ficha indicada en la posición x,y.
-		 * Retorna true si la posición destino estaba vacía
-		 * Retorna false si esa posición estaba ocupada y no se
+		 * Coloca la ficha indicada en la posiciÃ³n x,y.
+		 * Retorna true si la posiciÃ³n destino estaba vacÃ­a
+		 * Retorna false si esa posiciÃ³n estaba ocupada y no se
 		 * puede colocar la ficha
 		 */
 		bool PonTirada(int _x, int _y, int _ficha /*Ficha _ficha*/);
 		
 		/*
-		 * Elimina la ficha que hay en esa posición y coloca un VACIO
-		 * Esto vendrá bien cuando estemos recorriendo todas las
-		 * posibilidades de tiradas y tengamos que volver atrás en la
-		 * recursión.
+		 * Elimina la ficha que hay en esa posiciÃ³n y coloca un VACIO
+		 * Esto vendrÃ¡ bien cuando estemos recorriendo todas las
+		 * posibilidades de tiradas y tengamos que volver atrÃ¡s en la
+		 * recursiÃ³n.
 		 */
 		void QuitaTirada(int _x, int _y);
 		
 		/*
-		 * Retorna valoración de la situación del tablero
-		 * La valoración será la siguiente:
+		 * Retorna valoraciÃ³n de la situaciÃ³n del tablero
+		 * La valoraciÃ³n serÃ¡ la siguiente:
 		 * 1. Si ha ganado la ficha _jugador --> se retorna 500
-		 * 2. Si hay dos fichas seguidas de _jugador y la tercera posición
-		 * es vacía --> se retorna 300
+		 * 2. Si hay dos fichas seguidas de _jugador y la tercera posiciÃ³n
+		 * es vacÃ­a --> se retorna 300
 		 * 3. Si no se cumple ninguna de las anteriores --> se retorna 0
 		 */
 		int Evaluacion(Ficha _jugador);
